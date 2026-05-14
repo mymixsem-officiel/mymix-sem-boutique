@@ -189,7 +189,7 @@ if (showContactBtn && contactFormContainer) {
   for (var i = 0; i < 15; i++) {
     var b = document.createElement('div');
     b.classList.add('bubble');
-    var s = Math.random() * 100 + 40;
+    var s = Math.random() * 60 + 30;
     var couleur = couleurs[Math.floor(Math.random() * couleurs.length)];
     var posX, posY;
     
