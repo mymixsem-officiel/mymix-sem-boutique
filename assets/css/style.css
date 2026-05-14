@@ -110,8 +110,8 @@ body { background:var(--black); color:var(--cream); font-family:'Montserrat',san
 .contact-btn { background:transparent; border:2px solid #C9A84C; color:#C9A84C; padding:10px; font-weight:bold; font-size:0.95rem; cursor:pointer; border-radius:4px; }
 
 /* WhatsApp float */
-.whatsapp-float { position:fixed; bottom:20px; right:20px; width:60px; height:60px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:5000; }
-.whatsapp-float i { color:#fff; font-size:2rem; }
+.whatsapp-float { position:fixed; bottom:20px; right:20px; width:30px; height:30px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:5000; }
+.whatsapp-float i { color:#fff; font-size:1rem; }
 
 /* Footer */
 .footer { background:#0a0a0a; border-top:1px solid var(--gold); padding:30px 15px; margin-top:40px; }
