@@ -141,3 +141,6 @@ body { background:var(--black); color:var(--cream); font-family:'Montserrat',san
 /* Effet activé sur les cartes */
 .card.active-card { border:2px solid #E8D48B; box-shadow:0 0 15px rgba(201,168,76,0.5); }
 .card-btn.active-btn { background:var(--gold); color:var(--black); }
+
+/* Cacher le panier et Commander quand le menu est ouvert */
+.navbar:has(.nav-menu.active) .nav-actions { display: none; }
