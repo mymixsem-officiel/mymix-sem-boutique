@@ -37,7 +37,7 @@ body { background:var(--black); color:var(--cream); font-family:'Montserrat',san
 .search-btn { background:var(--gold); color:var(--black); border:none; padding:6px 16px; font-size:0.85rem; font-weight:bold; cursor:pointer; border-radius:4px; }
 .collections { max-width:100%; margin:0 auto; padding:40px 15px; }
 .cards-container { display:grid; grid-template-columns:1fr 1fr; gap:15px; max-width:500px; margin:0 auto; }
-.card { min-height:200px; border-radius:4px; overflow:hidden; position:relative; background-size:cover; background-position:center; border:1px solid var(--gold); }
+.card { min-height:200px; width:100%; border-radius:4px; overflow:hidden; position:relative; background-size:cover; background-position:center; border:1px solid var(--gold); }
 .card-wax { background-image:url('../images/wax/wax-miss-africa-01.jpg'); }
 .card-parfums { background-image:url('../images/parfums/parfum-01.jpeg'); }
 .card-accessoires { background-image:url('../images/accessoires/sac-1-stylion-dellanear.jpg'); }
@@ -137,3 +137,7 @@ body { background:var(--black); color:var(--cream); font-family:'Montserrat',san
   .produit-card { width:160px; }
   .counter-number { font-size:1.6rem; }
 }
+
+/* Effet activé sur les cartes */
+.card.active-card { border:2px solid #E8D48B; box-shadow:0 0 15px rgba(201,168,76,0.5); }
+.card-btn.active-btn { background:var(--gold); color:var(--black); }

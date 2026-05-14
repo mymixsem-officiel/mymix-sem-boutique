@@ -217,3 +217,20 @@ if (showContactBtn && contactFormContainer) {
     bc.appendChild(b);
   }
 })();
+
+// ========== EFFET ALLUMÉ SUR LES CARTES ==========
+var cartes = document.querySelectorAll('.card');
+for (var i = 0; i < cartes.length; i++) {
+  cartes[i].addEventListener('click', function() {
+    // Retirer l'effet des autres cartes
+    for (var j = 0; j < cartes.length; j++) {
+      cartes[j].classList.remove('active-card');
+      var btn = cartes[j].querySelector('.card-btn');
+      if (btn) btn.classList.remove('active-btn');
+    }
+    // Ajouter l'effet à la carte cliquée
+    this.classList.add('active-card');
+    var btn = this.querySelector('.card-btn');
+    if (btn) btn.classList.add('active-btn');
+  });
+}
