@@ -22,40 +22,6 @@
     </style>
 </head>
 <body>
-<script>        var code = prompt('Mot de passe admin :');        if (code !== 'chantal2026') { document.body.innerHTML = '<h1 style="color:#C9A84C;text-align:center;margin-top:100px;">🔒 Accès refusé</h1>'; }    </script>
-    <h1>📊 Tableau de bord - Mymix Sem</h1>
-    <div class="stats">
-        <div class="stat-card"><h3 id="nb-comptes">0</h3><p>Comptes créés</p></div>
-        <div class="stat-card"><h3 id="nb-commandes">0</h3><p>Commandes WhatsApp</p></div>
-    </div>
-    <h2 style="color:var(--gold);margin-bottom:15px;">👥 Membres inscrits</h2>
-    <table><thead><tr><th>ID</th><th>Nom</th><th>Prénom</th><th>Numéro</th><th>Actions</th></tr></thead><tbody id="liste-membres"></tbody></table>
-    <a href="index.html" class="btn-retour">⬅ Retour au site</a>
-
-    <script>
-        function chargerMembres() {
-            var users = JSON.parse(localStorage.getItem('mymix-users')) || [];
-            document.getElementById('nb-comptes').textContent = users.length;
-            document.getElementById('nb-commandes').textContent = JSON.parse(localStorage.getItem('mymix-cart'))?.length || 0;
-            var tbody = document.getElementById('liste-membres');
-            tbody.innerHTML = '';
-            users.forEach(function(u, index) {
-                var tr = document.createElement('tr');
-                tr.innerHTML = '<td>'+u.id+'</td><td>'+u.nom+'</td><td>'+u.prenom+'</td><td>'+u.tel+'</td><td><button class="btn-suppr" onclick="supprimerMembre('+index+')">🗑 Supprimer</button></td>';
-                tbody.appendChild(tr);
-            });
-        }
-        
-        function supprimerMembre(index) {
-            if (confirm('Supprimer ce membre ?')) {
-                var users = JSON.parse(localStorage.getItem('mymix-users')) || [];
-                users.splice(index, 1);
-                localStorage.setItem('mymix-users', JSON.stringify(users));
-                chargerMembres();
-            }
-        }
-        
-        chargerMembres();
-    </script>
+<script>        var code = prompt('Mot de passe admin :');        if (code !== 'chantal2026') {            document.body.innerHTML = '<div style="background:#0D0D0D;width:100%;height:100vh;display:flex;align-items:center;justify-content:center;"><p style="color:#C9A84C;font-size:1.5rem;text-align:center;font-family:sans-serif;">🔒 Accès refusé.<br>Revenez dans 5 minutes.</p></div>';            setTimeout(function() { window.close(); }, 3000);        }    </script>
 </body>
 </html>
