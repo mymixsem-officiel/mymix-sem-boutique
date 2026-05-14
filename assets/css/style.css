@@ -11,12 +11,12 @@ body { background:var(--black); color:var(--cream); font-family:'Montserrat',san
 
 /* Navigation */
 .navbar { position:fixed; top:0; width:100%; background:rgba(13,13,13,0.95); border-bottom:1px solid var(--gold); z-index:1000; display:flex; flex-wrap:wrap; align-items:center; padding:6px 10px; }
-.menu-toggle { background:none; border:none; color:var(--gold); font-size:2rem; cursor:pointer; order:1; margin-right:auto; }
-.nav-logo { font-family:'Playfair Display',serif; font-size:1.8rem; color:var(--gold); text-decoration:none; order:3; margin-left:auto; }
+.menu-toggle { background:none; border:none; color:var(--gold); font-size:1.6rem; cursor:pointer; order:1; margin-right:auto; }
+.nav-logo { font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--gold); text-decoration:none; order:3; margin-left:auto; }
 .nav-actions { display:flex; align-items:center; gap:6px; order:2; position:absolute; left:50%; transform:translateX(-50%); }
-.cart-icon { font-size:1.5rem; color:var(--gold); position:relative; cursor:pointer; }
-.cart-count { position:absolute; top:-6px; right:-8px; background:var(--bordeaux); color:#fff; font-size:0.7rem; width:16px; height:16px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
-.nav-cta { background:var(--gold); color:var(--black); padding:8px 14px; text-decoration:none; font-weight:bold; font-size:0.85rem; border-radius:2px; }
+.cart-icon { font-size:1.2rem; color:var(--gold); position:relative; cursor:pointer; }
+.cart-count { position:absolute; top:-5px; right:-6px; background:var(--bordeaux); color:#fff; font-size:0.6rem; width:14px; height:14px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+.nav-cta { background:var(--gold); color:var(--black); padding:6px 10px; text-decoration:none; font-weight:bold; font-size:0.75rem; border-radius:2px; }
 .nav-menu { display:none; flex-direction:column; width:100%; order:4; list-style:none; text-align:left; padding:6px 10px; }
 .nav-menu.active { display:flex; }
 .nav-menu a { color:var(--cream); text-decoration:none; padding:8px 5px; font-size:0.9rem; display:block; }
