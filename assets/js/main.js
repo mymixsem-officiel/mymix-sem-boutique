@@ -23,6 +23,13 @@ var menuToggle = document.getElementById('menu-toggle'), navMenu = document.getE
 if (menuToggle && navMenu) { menuToggle.onclick = function(e) { e.stopPropagation(); navMenu.classList.toggle('active'); }; document.addEventListener('click', function(e) { if (!navMenu.contains(e.target) && e.target !== menuToggle) navMenu.classList.remove('active'); }); }
 
 function toggleGalerie(id) {
+  // Effet allumé sur la carte
+  var cartes = document.querySelectorAll('.card');
+  for (var j = 0; j < cartes.length; j++) {
+    cartes[j].classList.remove('active-card');
+    var b = cartes[j].querySelector('.card-btn');
+    if (b) b.classList.remove('active-btn');
+  }
   var gals = document.querySelectorAll('.galerie.active');
   for (var i = 0; i < gals.length; i++) { if (gals[i].id !== id) gals[i].classList.remove('active'); }
   var g = document.getElementById(id); if (!g) return; g.classList.toggle('active'); if (g.classList.contains('active')) remplirGalerie(id);
