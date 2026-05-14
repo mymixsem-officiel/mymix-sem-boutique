@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Test Panier</title>
+</head>
+<body>
+    <button class="btn-add-cart" data-id="test1" data-nom="Produit Test" data-prix="5000">Ajouter au panier</button>
+    <p>Panier : <span id="cart-count">0</span></p>
+    <button onclick="window.location.href='panier.html'">Voir panier</button>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('mymix-cart') || '[]');
+        cart = cart.filter(item => item && item.id && item.nom && typeof item.prix === 'number');
+
+        function saveCart() {
+            localStorage.setItem('mymix-cart', JSON.stringify(cart));
+            document.getElementById('cart-count').textContent = cart.reduce((s,i) => s + i.quantite, 0);
+        }
+
+        document.body.addEventListener('click', function(e) {
+            if (!e.target.classList.contains('btn-add-cart')) return;
+            const btn = e.target;
+            const id = btn.getAttribute('data-id');
+            const nom = btn.getAttribute('data-nom');
+            const prix = parseInt(btn.getAttribute('data-prix'));
+            
+            if (!id || !nom || isNaN(prix)) {
+                alert('Erreur : id=' + id + ' nom=' + nom + ' prix=' + prix);
+                return;
+            }
+            
+            const existant = cart.find(i => i.id === id);
+            if (existant) existant.quantite += 1;
+            else cart.push({ id, nom, prix, quantite: 1 });
+            saveCart();
+            alert('Ajouté ! Panier contient ' + cart.length + ' article(s).');
+        });
+
+        saveCart();
+    </script>
+</body>
+</html>

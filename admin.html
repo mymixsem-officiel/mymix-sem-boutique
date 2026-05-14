@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Mymix Sem</title>
+    <style>
+        :root { --gold: #C9A84C; --black: #0D0D0D; --cream: #F9F6F0; --bordeaux: #6B1D1D; }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { background:var(--black); color:var(--cream); font-family:sans-serif; padding:20px; }
+        h1 { color:var(--gold); text-align:center; margin-bottom:30px; }
+        .stats { display:flex; gap:20px; justify-content:center; margin-bottom:30px; flex-wrap:wrap; }
+        .stat-card { background:#111; border:1px solid var(--gold); padding:20px; border-radius:8px; text-align:center; min-width:150px; }
+        .stat-card h3 { color:var(--gold); font-size:2rem; }
+        .stat-card p { color:#aaa; font-size:0.9rem; }
+        table { width:100%; border-collapse:collapse; }
+        th { color:var(--gold); border-bottom:2px solid var(--gold); padding:10px; text-align:left; }
+        td { border-bottom:1px solid #333; padding:10px; color:var(--cream); }
+        .btn-suppr { background:var(--bordeaux); color:#fff; border:none; padding:5px 12px; cursor:pointer; border-radius:4px; font-size:0.8rem; }
+        .btn-suppr:hover { background:#ff4444; }
+        .btn-retour { display:inline-block; margin-top:20px; background:var(--gold); color:var(--black); padding:10px 20px; text-decoration:none; border-radius:4px; }
+    </style>
+</head>
+<body>
+    <h1>📊 Tableau de bord - Mymix Sem</h1>
+    <div class="stats">
+        <div class="stat-card"><h3 id="nb-comptes">0</h3><p>Comptes créés</p></div>
+        <div class="stat-card"><h3 id="nb-commandes">0</h3><p>Commandes WhatsApp</p></div>
+    </div>
+    <h2 style="color:var(--gold);margin-bottom:15px;">👥 Membres inscrits</h2>
+    <table><thead><tr><th>ID</th><th>Nom</th><th>Prénom</th><th>Numéro</th><th>Actions</th></tr></thead><tbody id="liste-membres"></tbody></table>
+    <a href="index.html" class="btn-retour">⬅ Retour au site</a>
+
+    <script>
+        function chargerMembres() {
+            var users = JSON.parse(localStorage.getItem('mymix-users')) || [];
+            document.getElementById('nb-comptes').textContent = users.length;
+            document.getElementById('nb-commandes').textContent = JSON.parse(localStorage.getItem('mymix-cart'))?.length || 0;
+            var tbody = document.getElementById('liste-membres');
+            tbody.innerHTML = '';
+            users.forEach(function(u, index) {
+                var tr = document.createElement('tr');
+                tr.innerHTML = '<td>'+u.id+'</td><td>'+u.nom+'</td><td>'+u.prenom+'</td><td>'+u.tel+'</td><td><button class="btn-suppr" onclick="supprimerMembre('+index+')">🗑 Supprimer</button></td>';
+                tbody.appendChild(tr);
+            });
+        }
+        
+        function supprimerMembre(index) {
+            if (confirm('Supprimer ce membre ?')) {
+                var users = JSON.parse(localStorage.getItem('mymix-users')) || [];
+                users.splice(index, 1);
+                localStorage.setItem('mymix-users', JSON.stringify(users));
+                chargerMembres();
+            }
+        }
+        
+        chargerMembres();
+    </script>
+</body>
+</html>
