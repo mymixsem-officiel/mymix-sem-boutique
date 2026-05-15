@@ -14,7 +14,7 @@ function afficherPanier(){
 function changerQuantite(i,d){ var cart=getCart(); if(!cart[i])return; cart[i].quantite+=d; if(cart[i].quantite<1)cart.splice(i,1); saveCart(cart); }
 function supprimer(i){ var cart=getCart(); cart.splice(i,1); saveCart(cart); }
 function viderPanier(){ if(confirm('Vider tout le panier ?')){ localStorage.removeItem('mymix-cart'); afficherPanier(); } }
-function commander(){
+function commander(){  var user = JSON.parse(localStorage.getItem('mymix-user'));
   var cart=getCart();
   if(cart.length===0)return;
   var m='Bonjour Mymix Sem ! Je souhaite commander :%0A%0A',t=0;
