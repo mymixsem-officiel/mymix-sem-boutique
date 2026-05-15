@@ -21,6 +21,7 @@ if (cartIcon) { cartIcon.onclick = function() { window.location.href = 'panier.h
 
 var menuToggle = document.getElementById('menu-toggle'), navMenu = document.getElementById('nav-menu');
 if (menuToggle && navMenu) { menuToggle.onclick = function(e) { e.stopPropagation(); navMenu.classList.toggle('active'); }; document.addEventListener('click', function(e) { if (!navMenu.contains(e.target) && e.target !== menuToggle) navMenu.classList.remove('active'); }); }
+var liensMenu = navMenu.querySelectorAll('a');  for (var i = 0; i < liensMenu.length; i++) {    liensMenu[i].addEventListener('click', function() {      navMenu.classList.remove('active');    });  }
 
 function toggleGalerie(id) {
   // Effet allumé sur la carte
