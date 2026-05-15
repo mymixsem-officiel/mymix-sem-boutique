@@ -118,6 +118,7 @@ if (contactSubmit) {
   };
 }
 
+
 // ========== À PROPOS ==========
 setTimeout(function() {
   var aboutLink = document.querySelector('a[href="#about"]');
@@ -127,6 +128,7 @@ setTimeout(function() {
     aboutLink.onclick = function(e) {
       e.preventDefault();
       aboutSection.classList.add('visible');
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
       clearTimeout(aboutTimer);
       aboutTimer = setTimeout(function() {
         aboutSection.classList.remove('visible');
@@ -138,106 +140,3 @@ setTimeout(function() {
     };
   }
 }, 1000);
-
-// ========== MUSIQUE DE FOND ==========
-var bgMusic = document.getElementById('bg-music');
-var musicToggle = document.getElementById('music-toggle');
-var musicOn = false;
-
-if (musicToggle && bgMusic) {
-  musicToggle.onclick = function() {
-    if (musicOn) {
-      bgMusic.pause();
-      musicToggle.textContent = '🔇';
-    } else {
-      bgMusic.play();
-      musicToggle.textContent = '🔊';
-    }
-    musicOn = !musicOn;
-  };
-}
-
-// ========== AFFICHER/MASQUER FORMULAIRE CONTACT ==========
-var showContactBtn = document.getElementById('show-contact-btn');
-var contactFormContainer = document.getElementById('contact-form-container');
-if (showContactBtn && contactFormContainer) {
-  showContactBtn.onclick = function() {
-    if (contactFormContainer.style.display === 'none') {
-      contactFormContainer.style.display = 'block';
-      showContactBtn.textContent = '📩 Fermer le formulaire';
-    } else {
-      contactFormContainer.style.display = 'none';
-      showContactBtn.textContent = '📩 Cliquez ici pour nous écrire';
-    }
-  };
-}
-
-
-
-
-
-// ========== BULLES FLOTTANTES (15 bulles réparties) ==========
-(function() {
-  var hero = document.querySelector('.hero');
-  if (!hero) return;
-  var bc = document.createElement('div');
-  bc.classList.add('bubbles-container');
-  hero.appendChild(bc);
-  
-  var couleurs = [
-    'radial-gradient(circle, #C9A84C, #6B1D1D)',
-    'radial-gradient(circle, #E8D48B, #0D0D0D)',
-    'radial-gradient(circle, #F9F6F0, #6B1D1D)',
-    'radial-gradient(circle, #C9A84C, #0D0D0D)',
-    'radial-gradient(circle, #8B1A1A, #C9A84C)',
-    'radial-gradient(circle, #E8D48B, #6B1D1D)'
-  ];
-  
-  for (var i = 0; i < 15; i++) {
-    var b = document.createElement('div');
-    b.classList.add('bubble');
-    var s = Math.random() * 60 + 30;
-    var couleur = couleurs[Math.floor(Math.random() * couleurs.length)];
-    var posX, posY;
-    
-    if (i < 4) {
-      // 4 bulles en bas
-      posX = Math.random() * 90;
-      posY = 50 + Math.random() * 40;
-    } else if (i < 7) {
-      // 3 bulles à droite
-      posX = 70 + Math.random() * 25;
-      posY = Math.random() * 80;
-    } else if (i < 10) {
-      // 3 bulles à gauche
-      posX = Math.random() * 25;
-      posY = Math.random() * 80;
-    } else {
-      // 5 bulles partout
-      posX = Math.random() * 90;
-      posY = Math.random() * 80;
-    }
-    
-    var vitesse = Math.random() * 8 + 10;
-    var delai = Math.random() * 5;
-    b.style.cssText = 'width:'+s+'px;height:'+s+'px;left:'+posX+'%;top:'+posY+'%;background:'+couleur+';animation-duration:'+vitesse+'s;animation-delay:'+delai+'s;';
-    bc.appendChild(b);
-  }
-})();
-
-// ========== EFFET ALLUMÉ SUR LES CARTES ==========
-var cartes = document.querySelectorAll('.card');
-for (var i = 0; i < cartes.length; i++) {
-  cartes[i].addEventListener('click', function() {
-    // Retirer l'effet des autres cartes
-    for (var j = 0; j < cartes.length; j++) {
-      cartes[j].classList.remove('active-card');
-      var btn = cartes[j].querySelector('.card-btn');
-      if (btn) btn.classList.remove('active-btn');
-    }
-    // Ajouter l'effet à la carte cliquée
-    this.classList.add('active-card');
-    var btn = this.querySelector('.card-btn');
-    if (btn) btn.classList.add('active-btn');
-  });
-}
