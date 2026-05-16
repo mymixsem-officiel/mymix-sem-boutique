@@ -23,7 +23,7 @@ body{background:var(--black);color:var(--cream);font-family:'Montserrat',sans-se
 .search-input{background:#1a1a1a;border:1px solid #333;color:var(--cream);padding:8px 12px;font-size:.9rem;width:85%;max-width:350px;border-radius:4px}
 .search-btn{background:var(--gold);color:var(--black);border:none;padding:6px 16px;font-size:.85rem;font-weight:bold;cursor:pointer;border-radius:4px}
 .collections{max-width:100%;margin:0 auto;padding:40px 15px}
-.cards-container{display:flex;flex-wrap:wrap;gap:15px;justify-content:center}
+.cards-container{display:grid;grid-template-columns:1fr 1fr;gap:15px;max-width:500px;margin:0 auto}
 .card{flex:1 1 220px;min-height:220px;border-radius:4px;overflow:hidden;position:relative;background-size:cover;background-position:center;border:1px solid var(--gold);width:100%}
 .card-wax{background-image:url('../images/wax/wax-miss-africa-01.jpg')}
 .card-parfums{background-image:url('../images/parfums/parfum-01.jpeg')}
