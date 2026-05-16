@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns="http://www.w3.org/ns/widgets"
+        xmlns:gap="http://phonegap.com/ns/1.0"
+        id="com.mymixsem.app"
+        version="1.0.0">
+    <name>Mymix Sem</name>
+    <description>Le mélange qui vous sublime</description>
+    <author>Mymix Sem</author>
+    <content src="index.html" />
+    <icon src="icon.png" />
+</widget>
