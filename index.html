@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🛍️</text></svg>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mymix Sem - Le mélange qui vous sublime</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🛍️</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
@@ -12,26 +12,24 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<audio id="bg-music" loop volume="0.3">        <source src="assets/music/fond.mp3" type="audio/mpeg">    </audio>    <button id="music-toggle" style="position:fixed;bottom:60px;right:25px;width:35px;height:35px;background:#C9A84C;color:#0D0D0D;border:none;border-radius:50%;z-index:5000;cursor:pointer;font-size:1rem;">🔇</button>
-    <!-- Navigation -->
+    <audio id="bg-music" loop volume="0.3"><source src="assets/music/fond.mp3" type="audio/mpeg"></audio>
+    <button id="music-toggle" style="position:fixed;bottom:60px;right:20px;width:35px;height:35px;background:#C9A84C;color:#0D0D0D;border:none;border-radius:50%;z-index:5000;cursor:pointer;font-size:1rem;">🔇</button>
+
     <nav class="navbar">
         <button class="menu-toggle" id="menu-toggle">☰</button>
         <a href="#" class="nav-logo">Mymix Sem</a>
         <div class="nav-actions">
             <div class="cart-icon" id="cart-icon"><span class="cart-count" id="cart-count">0</span>🛍️</div>
-            <a href="#" class="nav-cta">Commander</a>
+            <a href="panier.html" class="nav-cta">Commander</a>
         </div>
         <ul class="nav-menu" id="nav-menu">
             <li><a href="#collections">Wax</a></li><li><a href="#collections">Parfums</a></li><li><a href="#collections">Accessoires</a></li>
-            <li><a href="#about">À propos</a></li><li><a href="#footer">Contact</a></li>
-            <li><a href="#" id="lien-compte">Compte</a></li>
+            <li><a href="#about">À propos</a></li><li><a href="#footer">Contact</a></li><li><a href="#" id="lien-compte">Compte</a></li>
         </ul>
     </nav>
 
-    <!-- Hero -->
     <main class="hero" id="hero"><div class="hero-bg"></div><h1>Mymix Sem</h1><p>Le mélange qui vous sublime</p><div class="scroll-indicator"><span></span><span></span><span></span></div></main>
 
-    <!-- Collections -->
     <section class="collections" id="collections">
         <h2 class="section-title">Nos Collections</h2>
         <div class="search-bar"><input type="text" id="search-input" placeholder="Ex: wax, parfums, sacs, chaussures..." class="search-input"><button id="search-btn" class="search-btn">🔍 Rechercher</button></div>
@@ -43,66 +41,32 @@
         </div>
     </section>
 
-    <!-- Galeries -->
     <section class="galerie" id="galerie-wax"><h3 class="section-title">Wax</h3><div class="galerie-grid" id="galerie-wax-grid"></div></section>
     <section class="galerie" id="galerie-parfums"><h3 class="section-title">Parfums</h3><div class="galerie-grid" id="galerie-parfums-grid"></div></section>
     <section class="galerie" id="galerie-chaussures"><h3 class="section-title">Chaussures</h3><div class="galerie-grid" id="galerie-chaussures-grid"></div></section>
     <section class="galerie" id="galerie-accessoires"><h3 class="section-title">Sacs</h3><div class="galerie-grid" id="galerie-accessoires-grid"></div></section>
 
-    <!-- À propos -->
     <section class="about" id="about"><h2 class="section-title">À propos de Chantal</h2><div class="about-container"><div class="about-img"><img src="assets/images/about/chantal.jpg" alt="Chantal Adanlawo" onerror="this.src='https://via.placeholder.com/400x400/1a1a1a/C9A84C?text=Chantal'"></div><div class="about-text"><h3>Chantal <span class="gold">Adanlawo</span></h3><p class="about-meaning">« La brillance du corps »</p><p>Passionnée par l'élégance africaine et les senteurs d'Orient, Chantal a fondé <strong>Mymix Sem</strong> pour partager ses coups de cœur et sublimer chaque femme.</p><a href="#collections" class="about-btn">Découvrir les collections</a></div></div></section>
 
-    <!-- Compteurs -->
     <section class="counters" id="counters"><div class="counters-container"><div class="counter-item"><span class="counter-number" data-target="150">0</span><span class="counter-label">Wax d'Exception</span></div><div class="counter-item"><span class="counter-number" data-target="80">0</span><span class="counter-label">Parfums Rares</span></div><div class="counter-item"><span class="counter-number" data-target="200">0</span><span class="counter-label">Clientes Satisfaites</span></div></div></section>
 
-    <!-- Produits Vedettes -->
     <section class="produits-vedettes" id="produits"><h2 class="section-title">Produits Vedettes</h2><div class="produits-grid">
-        <div class="produit-card" style="position:relative;">
-            <span class="badge-new">NOUVEAU</span>
-            <div class="produit-img" style="background-image:url('assets/images/wax/wax-miss-africa-02.jpg')"></div>
-            <div class="produit-info"><h4>Wax Miss Africa A2520016</h4><p class="produit-prix">15 000 FCFA</p><button class="btn-add-cart" data-id="wax1" data-nom="Wax Miss Africa A2520016" data-prix="15000">Ajouter au panier</button></div>
-        </div>
-        <div class="produit-card" style="position:relative;">
-            <span class="badge-promo">PROMO -20%</span>
-            <div class="produit-img" style="background-image:url('assets/images/parfums/parfum-10.jpeg')"></div>
-            <div class="produit-info"><h4>Parfum بن عمر Code 1290</h4><p class="produit-prix">2 000 FCFA</p><button class="btn-add-cart" data-id="parfum1" data-nom="Parfum بن عمر Code 1290" data-prix="2000">Ajouter au panier</button></div>
-        </div>
-        <div class="produit-card" style="position:relative;">
-            <div class="produit-img" style="background-image:url('assets/images/chaussures/chaussure-01.jpeg')"></div>
-            <div class="produit-info"><h4>Chaussures Stylion Deluxe</h4><p class="produit-prix">25 000 FCFA</p><button class="btn-add-cart" data-id="chaussure1" data-nom="Chaussures Stylion Deluxe" data-prix="25000">Ajouter au panier</button></div>
-        </div>
+        <div class="produit-card" style="position:relative;"><span class="badge-new">NOUVEAU</span><div class="produit-img" style="background-image:url('assets/images/wax/wax-miss-africa-02.jpg')"></div><div class="produit-info"><h4>Wax Miss Africa A2520016</h4><p class="produit-prix">15 000 FCFA</p><button class="btn-add-cart" data-id="wax1" data-nom="Wax Miss Africa A2520016" data-prix="15000">Ajouter au panier</button></div></div>
+        <div class="produit-card" style="position:relative;"><span class="badge-promo">PROMO -20%</span><div class="produit-img" style="background-image:url('assets/images/parfums/parfum-10.jpeg')"></div><div class="produit-info"><h4>Parfum بن عمر Code 1290</h4><p class="produit-prix">2 000 FCFA</p><button class="btn-add-cart" data-id="parfum1" data-nom="Parfum بن عمر Code 1290" data-prix="2000">Ajouter au panier</button></div></div>
+        <div class="produit-card" style="position:relative;"><div class="produit-img" style="background-image:url('assets/images/chaussures/chaussure-01.jpeg')"></div><div class="produit-info"><h4>Chaussures Stylion Deluxe</h4><p class="produit-prix">25 000 FCFA</p><button class="btn-add-cart" data-id="chaussure1" data-nom="Chaussures Stylion Deluxe" data-prix="25000">Ajouter au panier</button></div></div>
     </div></section>
 
-    <!-- Avis -->
     <section id="avis-postes"><h2 class="section-title">Avis des clientes</h2><div id="avis-container"><p>Chargement des avis...</p></div></section>
     <section id="commentaire"><h2 class="section-title">Laissez un avis</h2><div class="commentaire-form"><input type="text" id="comment-nom" placeholder="Votre nom"><div id="comment-etoiles"><span class="star" data-value="1">☆</span><span class="star" data-value="2">☆</span><span class="star" data-value="3">☆</span><span class="star" data-value="4">☆</span><span class="star" data-value="5">☆</span></div><textarea id="comment-message" placeholder="Votre avis..."></textarea><button id="comment-submit">Envoyer</button></div></section>
 
-    <!-- Formulaire de contact -->
-    <section id="contact-section">
-        <h2 class="section-title">Une question ?</h2>
-        <div style="text-align:center;margin-bottom:20px;">
-            <button id="show-contact-btn" style="background:transparent;border:2px solid #C9A84C;color:#C9A84C;padding:14px 25px;font-size:1.2rem;font-weight:bold;cursor:pointer;border-radius:4px;">📩 Cliquez ici pour nous écrire</button>
-        </div>
-        <div id="contact-form-container" style="display:none;">
-            <div class="contact-form">
-                <input type="text" id="contact-nom" placeholder="Votre nom" class="contact-input">
-                <input type="tel" id="contact-tel" placeholder="Votre numéro" class="contact-input">
-                <textarea id="contact-message" placeholder="Votre message..." class="contact-textarea"></textarea>
-                <button id="contact-submit" class="contact-btn">📱 Envoyer sur WhatsApp</button>
-            </div>
-        </div>
-    </section>
+    <section id="contact-section"><h2 class="section-title">Une question ?</h2><div style="text-align:center;margin-bottom:20px;"><button id="show-contact-btn" style="background:transparent;border:2px solid #C9A84C;color:#C9A84C;padding:14px 25px;font-size:1.2rem;font-weight:bold;cursor:pointer;border-radius:4px;">📩 Cliquez ici pour nous écrire</button></div><div id="contact-form-container" style="display:none;"><div class="contact-form"><input type="text" id="contact-nom" placeholder="Votre nom" class="contact-input"><input type="tel" id="contact-tel" placeholder="Votre numéro" class="contact-input"><textarea id="contact-message" placeholder="Votre message..." class="contact-textarea"></textarea><button id="contact-submit" class="contact-btn">📱 Envoyer sur WhatsApp</button></div></div></section>
 
-    <!-- Footer -->
     <footer class="footer" id="footer"><div class="footer-container"><div class="footer-col"><h3>Mymix Sem</h3><p>Le mélange qui vous sublime.</p></div><div class="footer-col"><h4>Contact</h4><p><i class="fab fa-whatsapp"></i> +229 01 66 68 27 65</p></div></div><div class="footer-bottom"><p>&copy; 2026 Mymix Sem — L'éclat du mélange</p></div></footer>
 
-    <!-- Modale Produit -->
     <div class="produit-modal" id="produit-modal"><div class="produit-modal-content"><span class="close-produit-modal" id="close-produit-modal">&times;</span><img id="produit-modal-img" src="" alt="" class="produit-modal-img"><div class="produit-modal-infos"><h2 id="produit-modal-nom"></h2><p id="produit-modal-prix" class="produit-modal-prix"></p><p id="produit-modal-desc" class="produit-modal-desc"></p><button id="produit-modal-cart" class="btn-add-cart">Ajouter au panier</button></div></div></div>
 
-    <!-- Modale Compte -->
-    <div class="compte-modal" id="compte-modal"><div class="compte-modal-content"><span class="close-compte-modal" id="close-compte-modal">&times;</span><div id="compte-step1"><h2 id="compte-titre">CRÉER UN COMPTE</h2><form id="compte-form" onsubmit="return false;" style="display:flex;flex-direction:column;gap:20px;"><div class="compte-field" style="display:flex;flex-direction:column;"><label for="compte-nom" style="color:#E8D48B;font-size:1.1rem;margin-bottom:5px;">👤 Nom</label><input type="text" id="compte-nom" placeholder="Votre nom" style="background:transparent;border:none;border-bottom:2px solid #444;color:#F9F6F0;padding:10px 0;font-size:1.1rem;width:100%;"></div><div class="compte-field" style="display:flex;flex-direction:column;"><label for="compte-prenom" style="color:#E8D48B;font-size:1.1rem;margin-bottom:5px;">🌟 Prénom</label><input type="text" id="compte-prenom" placeholder="Votre prénom" style="background:transparent;border:none;border-bottom:2px solid #444;color:#F9F6F0;padding:10px 0;font-size:1.1rem;width:100%;"></div><div class="compte-field" style="display:flex;flex-direction:column;"><label for="compte-tel" style="color:#E8D48B;font-size:1.1rem;margin-bottom:5px;">📱 Numéro</label><input type="tel" id="compte-tel" placeholder="+229 01 66 68 27 65" style="background:transparent;border:none;border-bottom:2px solid #444;color:#F9F6F0;padding:10px 0;font-size:1.1rem;width:100%;" required></div><div class="compte-field" style="display:flex;flex-direction:column;"><label for="compte-code" style="color:#E8D48B;font-size:1.1rem;margin-bottom:5px;">🔒 Code secret</label><input type="password" id="compte-code" placeholder="••••" style="background:transparent;border:none;border-bottom:2px solid #444;color:#F9F6F0;padding:10px 0;font-size:1.1rem;width:100%;" minlength="4" required></div><button type="button" id="compte-submit" style="width:100%;background:#C9A84C;color:#0D0D0D;border:none;padding:14px;font-weight:bold;font-size:1.1rem;text-transform:uppercase;margin-top:10px;cursor:pointer;">S'INSCRIRE</button></form><p class="compte-switch">Déjà un compte ? <a href="#" id="switch-connexion">Se connecter</a></p></div><div id="compte-step2" style="display:none;"><h2 style="text-align:center;color:#C9A84C;font-size:1.3rem;margin-bottom:15px;">VÉRIFICATION</h2><p style="text-align:center;color:#F9F6F0;margin-bottom:10px;">Votre code de vérification :</p><p id="code-verification" style="text-align:center;font-size:1rem;font-weight:bold;color:#C9A84C;letter-spacing:5px;margin-bottom:20px;"></p><p style="text-align:center;color:#aaa;font-size:0.8rem;margin-bottom:15px;">Recopiez ce code pour confirmer votre inscription</p><input type="text" id="compte-verification" placeholder="Code à 6 chiffres" style="width:100%;background:transparent;border:none;border-bottom:2px solid #444;color:#F9F6F0;padding:10px 0;font-size:1.1rem;text-align:center;margin-bottom:15px;"><button type="button" id="compte-verify-btn" style="width:100%;background:#25D366;color:#fff;border:none;padding:14px;font-weight:bold;font-size:1.1rem;cursor:pointer;">✅ VÉRIFIER</button><p id="verification-error" style="text-align:center;color:#ff4444;font-size:0.9rem;margin-top:10px;display:none;">Code incorrect. Réessayez.</p></div><div id="compte-step3" style="display:none;"><h2 style="text-align:center;color:#C9A84C;font-size:1.3rem;margin-bottom:20px;">MON PROFIL</h2><div style="background:#111;padding:20px;border-radius:8px;margin-bottom:15px;"><p style="color:#aaa;font-size:0.8rem;">ID Membre</p><p id="profil-id" style="color:#C9A84C;font-size:1rem;font-weight:bold;margin-bottom:10px;"></p><p style="color:#aaa;font-size:0.8rem;">Nom</p><p id="profil-nom" style="color:#F9F6F0;font-size:1rem;margin-bottom:10px;"></p><p style="color:#aaa;font-size:0.8rem;">Prénom</p><p id="profil-prenom" style="color:#F9F6F0;font-size:1rem;margin-bottom:10px;"></p><p style="color:#aaa;font-size:0.8rem;">Numéro</p><p id="profil-tel" style="color:#F9F6F0;font-size:1rem;"></p></div><button type="button" id="compte-deconnexion" style="width:100%;background:transparent;border:2px solid #6B1D1D;color:#6B1D1D;padding:12px;font-weight:bold;cursor:pointer;font-size:1rem;">SE DÉCONNECTER</button></div></div></div>
+    <div class="compte-modal" id="compte-modal"><div class="compte-modal-content"><span class="close-compte-modal" id="close-compte-modal">&times;</span><div id="compte-step1"><h2 id="compte-titre">CRÉER UN COMPTE</h2><form id="compte-form" onsubmit="return false;" style="display:flex;flex-direction:column;gap:20px;"><div class="compte-field" style="display:flex;flex-direction:column;"><label for="compte-nom" style="color:#E8D48B;font-size:1.1rem;margin-bottom:5px;">👤 Nom</label><input type="text" id="compte-nom" placeholder="Votre nom" style="background:transparent;border:none;border-bottom:2px solid #444;color:#F9F6F0;padding:10px 0;font-size:1.1rem;width:100%;"></div><div class="compte-field" style="display:flex;flex-direction:column;"><label for="compte-prenom" style="color:#E8D48B;font-size:1.1rem;margin-bottom:5px;">🌟 Prénom</label><input type="text" id="compte-prenom" placeholder="Votre prénom" style="background:transparent;border:none;border-bottom:2px solid #444;color:#F9F6F0;padding:10px 0;font-size:1.1rem;width:100%;"></div><div class="compte-field" style="display:flex;flex-direction:column;"><label for="compte-tel" style="color:#E8D48B;font-size:1.1rem;margin-bottom:5px;">📱 Numéro</label><input type="tel" id="compte-tel" placeholder="+229 01 66 68 27 65" style="background:transparent;border:none;border-bottom:2px solid #444;color:#F9F6F0;padding:10px 0;font-size:1.1rem;width:100%;" required></div><div class="compte-field" style="display:flex;flex-direction:column;"><label for="compte-code" style="color:#E8D48B;font-size:1.1rem;margin-bottom:5px;">🔒 Code secret</label><input type="password" id="compte-code" placeholder="••••" style="background:transparent;border:none;border-bottom:2px solid #444;color:#F9F6F0;padding:10px 0;font-size:1.1rem;width:100%;" minlength="4" required></div><button type="button" id="compte-submit" style="width:100%;background:#C9A84C;color:#0D0D0D;border:none;padding:14px;font-weight:bold;font-size:1.1rem;text-transform:uppercase;margin-top:10px;cursor:pointer;">S'INSCRIRE</button></form><p class="compte-switch">Déjà un compte ? <a href="#" id="switch-connexion">Se connecter</a></p></div><div id="compte-step2" style="display:none;"><h2 style="text-align:center;color:#C9A84C;font-size:1.3rem;margin-bottom:15px;">VÉRIFICATION</h2><p style="text-align:center;color:#F9F6F0;margin-bottom:10px;">Votre code de vérification :</p><p id="code-verification" style="text-align:center;font-size:2rem;font-weight:bold;color:#C9A84C;letter-spacing:5px;margin-bottom:20px;"></p><input type="text" id="compte-verification" placeholder="Code à 6 chiffres" style="width:100%;background:transparent;border:none;border-bottom:2px solid #444;color:#F9F6F0;padding:10px 0;font-size:1.1rem;text-align:center;margin-bottom:15px;"><button type="button" id="compte-verify-btn" style="width:100%;background:#25D366;color:#fff;border:none;padding:14px;font-weight:bold;font-size:1.1rem;cursor:pointer;">✅ VÉRIFIER</button><p id="verification-error" style="text-align:center;color:#ff4444;font-size:0.9rem;margin-top:10px;display:none;">Code incorrect. Réessayez.</p></div><div id="compte-step3" style="display:none;"><h2 style="text-align:center;color:#C9A84C;font-size:1.3rem;margin-bottom:20px;">MON PROFIL</h2><div style="background:#111;padding:20px;border-radius:8px;margin-bottom:15px;"><p style="color:#aaa;font-size:0.8rem;">ID Membre</p><p id="profil-id" style="color:#C9A84C;font-size:1rem;font-weight:bold;margin-bottom:10px;"></p><p style="color:#aaa;font-size:0.8rem;">Nom</p><p id="profil-nom" style="color:#F9F6F0;font-size:1rem;margin-bottom:10px;"></p><p style="color:#aaa;font-size:0.8rem;">Prénom</p><p id="profil-prenom" style="color:#F9F6F0;font-size:1rem;margin-bottom:10px;"></p><p style="color:#aaa;font-size:0.8rem;">Numéro</p><p id="profil-tel" style="color:#F9F6F0;font-size:1rem;"></p></div><button type="button" id="compte-deconnexion" style="width:100%;background:transparent;border:2px solid #6B1D1D;color:#6B1D1D;padding:12px;font-weight:bold;cursor:pointer;font-size:1rem;">SE DÉCONNECTER</button></div></div></div>
 
-    <!-- WhatsApp float -->
     <a href="https://wa.me/2290166682765" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <script src="assets/js/main.js"></script>
